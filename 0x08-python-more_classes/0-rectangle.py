@@ -3,5 +3,5 @@
 
 
 class Rectangle():
-        " " " A rectangle " " "
+        """A rectangle"""
         pass
