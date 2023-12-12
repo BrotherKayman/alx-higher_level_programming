@@ -128,7 +128,7 @@ class Rectangle(Base):
 
 
 #Method that assigns an argument to each attribute
-	def update(self, *args):
+	def __update(self, *args):
 		"""
         Update attributes of the rectangle with no-keyword arguments in the following order:
         1st argument: id attribute
@@ -150,3 +150,16 @@ class Rectangle(Base):
 			self.x = args[3]
 		if len(args) >= 5:
 			self.y = args[4]
+
+	def update(self, *args, ):
+		"""Updates instance attributes via no-keyword & keyword args."""
+		# print(args, kwargs)
+		if args:
+			self.__update(*args)
+		elif kwargs:
+			self.__update(**kwargs)
+
+def to_dictionary(self):
+        '''Returns dictionary representation of this class.'''
+        return {"id": self.id, "width": self.__width, "height": self.__height,
+                "x": self.__x, "y": self.__y}
