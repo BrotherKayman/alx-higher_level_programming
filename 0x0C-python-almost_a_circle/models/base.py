@@ -2,25 +2,27 @@
 """
 Class that defines the base
 """
-class Base
-"""
-Base models for all the classes of the project
-attributes:
-__nb_objects(int) initialized with 0
-"""
 
-__nb_objects = 0
-
-def __init__(self, id=None):
+class Base:
 	"""
-	Initialize a new Base
+	Represents the Base model
+	Base for all the classes of the project
+	attributes:
+	__nb_objects(int) initialized with 0
 
-	Args: 
-		id(int): New base identifier
+	"""
+
+	__nb_objects = 0
+
+	def __init__(self, id=None):
 		"""
-	 if id is not None:
-	 	self.id = id
-	 	else:
-	 		Base.__nb_objects += 1
-	 		self.id = Base.__nb_objects
+		Initialize a new Base
 
+		Args:
+			id(int): New base identifier
+		"""
+		if id is not None:
+			self.id = id
+		else:
+			Base.__nb_objects += 1
+			self.id = Base.__nb_objects
