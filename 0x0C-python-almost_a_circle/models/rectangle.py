@@ -12,8 +12,15 @@ class Rectangle(Base):
 	"""
 	def __init__(self, width, height, x=0, y=0, id=None):
 		"""
-		Assign arguments to the right attributes 
-		"""
+        Initialize a Rectangle object with width, height, x, y coordinates, and an optional ID.
+
+        Args:
+        - width (int): The width of the rectangle.
+        - height (int): The height of the rectangle.
+        - x (int): The x-coordinate of the rectangle (default is 0).
+        - y (int): The y-coordinate of the rectangle (default is 0).
+        - id (int or None): Optional ID for the rectangle (default is None).
+        """
 		super().__init__(id)
 		self.width = width
 		self.height = height
@@ -122,7 +129,17 @@ class Rectangle(Base):
 
 #Method that assigns an argument to each attribute
 	def update(self, *args):
-		"""Update attributes with no-keyword arguments."""
+		"""
+        Update attributes of the rectangle with no-keyword arguments in the following order:
+        1st argument: id attribute
+        2nd argument: width attribute
+        3rd argument: height attribute
+        4th argument: x attribute
+        5th argument: y attribute
+        
+        Args:
+        - *args (tuple): No-keyword arguments in the specified order.
+        """
 		if len(args) >= 1:
 			self.id = args[0]
 		if len(args) >= 2:
