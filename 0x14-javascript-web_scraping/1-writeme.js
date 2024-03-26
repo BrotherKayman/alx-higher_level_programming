@@ -2,8 +2,16 @@
 
 const fs = require('fs');
 
-fs.writeFile(process.argv[2], process.argv[3], (error) => {
+if (process.argv.length !== 4) {
+  console.error('Usage: node writeToFile.js <file_path> <string_to_write>');
+  process.exit(1);
+}
+
+const filePath = process.argv[2];
+const content = process.argv[3];
+
+fs.writeFile(filePath, content, 'utf-8', (error) => {
   if (error) {
-    console.log(error);
+    console.error(error);
   }
 });
